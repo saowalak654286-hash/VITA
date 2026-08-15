@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITA — Your Health, Connected.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--blue:#1769e0;--blue-dark:#0d4eb1;--sky:#edf7ff;--mint:#eafaf3;--purple:#f1edff;
+--green:#16a66a;--red:#dc3545;--ink:#122033;--muted:#6f7e91;--line:#e3eaf2;--white:#fff;
+--shadow:0 18px 50px rgba(24,55,91,.10);--radius:22px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f8fbfe;color:var(--ink);font-family:"DM Sans",sans-serif}
+a{text-decoration:none;color:inherit}.app-shell{min-height:100vh}.topbar{height:76px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 5%;gap:28px;position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Plus Jakarta Sans";font-weight:800;font-size:22px;color:var(--blue);white-space:nowrap}.brand-mark{width:35px;height:35px;border-radius:12px;background:var(--blue);color:white;display:grid;place-items:center;font-weight:800;box-shadow:0 8px 20px rgba(23,105,224,.25)}
+.public-nav{display:flex;gap:20px;align-items:center;justify-content:center;flex:1}.public-nav a{font-size:13px;color:#536276;font-weight:600}.public-nav a:hover{color:var(--blue)}
+.top-actions{display:flex;gap:8px}.btn{border:0;border-radius:12px;padding:11px 17px;font:600 14px inherit;cursor:pointer;transition:.2s}.btn-primary{background:var(--blue);color:white;box-shadow:0 8px 20px rgba(23,105,224,.2)}.btn-primary:hover{background:var(--blue-dark);transform:translateY(-1px)}.btn-ghost{background:white;border:1px solid var(--line);color:var(--ink)}.btn-large{padding:15px 22px;font-size:15px}.menu-btn{display:none;border:0;background:none;font-size:24px}
+.hero{padding:90px 6% 80px;display:grid;grid-template-columns:1.02fr .98fr;gap:55px;align-items:center;max-width:1400px;margin:auto}.eyebrow{color:var(--blue);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-family:"Plus Jakarta Sans";font-size:clamp(45px,6vw,76px);line-height:1.03;margin:15px 0 22px;letter-spacing:-.055em}.hero h1 span{color:var(--blue)}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}.hero-actions{display:flex;gap:12px;margin-top:28px}.hero-visual{position:relative;min-height:520px;display:grid;place-items:center}.phone{width:330px;border:10px solid #132236;border-radius:40px;background:#f7fbff;box-shadow:0 30px 70px rgba(25,54,89,.25);overflow:hidden;transform:rotate(2deg)}.phone-top{height:34px;background:#132236}.phone-body{padding:18px}.mini-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.avatar{width:34px;height:34px;border-radius:50%;background:var(--sky);display:grid;place-items:center;color:var(--blue);font-weight:800}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{padding:13px;border-radius:15px;background:white;border:1px solid var(--line)}.metric small{color:var(--muted);font-size:10px}.metric b{display:block;font-size:18px;margin-top:4px}.ai-float{margin-top:12px;padding:14px;border-radius:15px;background:var(--purple);color:#6046c9;font-size:12px;line-height:1.5}.progress{height:7px;background:#e7eef5;border-radius:10px;overflow:hidden;margin-top:8px}.progress i{display:block;width:76%;height:100%;background:var(--green);border-radius:10px}
+.section{padding:80px 6%;max-width:1400px;margin:auto}.section-head{max-width:720px;margin-bottom:35px}.section h2{font-family:"Plus Jakarta Sans";font-size:38px;letter-spacing:-.035em;margin:8px 0 12px}.section-head p{color:var(--muted);line-height:1.7}.grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 10px 30px rgba(24,55,91,.05)}.service{min-height:190px;transition:.25s}.service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:22px;margin-bottom:22px}.sky{background:var(--sky);color:var(--blue)}.mint{background:var(--mint);color:var(--green)}.purple{background:var(--purple);color:#6b4bd4}.service h3{margin:0 0 8px}.service p{color:var(--muted);font-size:14px;line-height:1.6}
+.ecosystem{background:#101f32;color:white;border-radius:32px;padding:50px;overflow:hidden;position:relative}.ecosystem:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(23,105,224,.18);filter:blur(40px);right:-100px;top:-170px}.ecosystem h2{position:relative;z-index:1}.nodes{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin-top:35px;position:relative;z-index:1}.node{padding:13px 17px;border-radius:99px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:13px}.node.you{background:var(--blue);font-weight:800}
+.feature-split{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}.chat{background:#eef7ff}.chat-bubble{padding:14px 16px;border-radius:18px;max-width:82%;margin:12px 0;line-height:1.5;font-size:14px}.user-bubble{margin-left:auto;background:var(--blue);color:white;border-bottom-right-radius:5px}.vita-bubble{background:white;border:1px solid var(--line);border-bottom-left-radius:5px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{border:1px solid #cfdbea;background:white;border-radius:99px;padding:9px 12px;color:#4f6074;font-size:12px;cursor:pointer}.chip:hover{border-color:var(--blue);color:var(--blue)}
+.dashboard{padding:35px 4%;max-width:1500px;margin:auto}.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.dash-head h1{font-family:"Plus Jakarta Sans";margin:0}.dash-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:18px;background:white;border:1px solid var(--line);border-radius:18px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:7px}.timeline{display:grid;gap:10px;margin-top:15px}.dose{display:flex;align-items:center;gap:15px;padding:15px;background:#fff;border:1px solid var(--line);border-radius:15px}.dot{width:11px;height:11px;border-radius:50%;background:var(--green)}.dot.upcoming{background:var(--blue)}.dose-info{flex:1}.dose-info small{display:block;color:var(--muted)}.taken{color:var(--green);font-weight:700;font-size:12px}.ring{width:120px;height:120px;border-radius:50%;background:conic-gradient(var(--blue) 0 92%,#e9f0f6 92%);display:grid;place-items:center;margin:5px auto 18px}.ring:after{content:"92%";width:88px;height:88px;border-radius:50%;background:white;display:grid;place-items:center;font-weight:800;font-size:20px}.alert{background:#fff5f6;border:1px solid #f4c6cc;color:#8d2631}.alert h3{color:var(--red)}.queue{background:var(--blue);color:white}.queue .muted{color:#cfe2ff}.queue-number{font-size:48px;font-weight:800;margin:12px 0}.queue-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.queue-stat{background:rgba(255,255,255,.1);padding:13px;border-radius:14px}.queue-stat small{display:block;color:#cfe2ff}.queue-stat strong{font-size:20px}.vitals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.vital{padding:15px;background:white;border:1px solid var(--line);border-radius:15px}.vital small{color:var(--muted)}.vital strong{display:block;font-size:21px;margin-top:4px}.risk{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.risk:last-child{border:0}.badge{padding:6px 9px;border-radius:99px;font-size:11px;font-weight:700}.low{background:var(--mint);color:var(--green)}.moderate{background:#fff6df;color:#a56a00}
+.page-hero{padding:65px 6%;background:linear-gradient(135deg,#edf7ff,#fff);border-bottom:1px solid var(--line)}.page-hero h1{font-family:"Plus Jakarta Sans";font-size:48px;margin:10px 0}.page-hero p{max-width:700px;color:var(--muted);font-size:17px;line-height:1.7}.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.form-input{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;font:inherit;margin:8px 0 14px}.search{display:flex;gap:10px;margin-bottom:20px}.search .form-input{margin:0}.map{height:270px;border-radius:20px;background:linear-gradient(30deg,#eef6f1 12%,transparent 12.5%,transparent 87%,#eef6f1 87.5%),linear-gradient(150deg,#eef6f1 12%,transparent 12.5%,transparent 87%,#eef6f1 87.5%),#f9fcfa;background-size:55px 55px;position:relative;overflow:hidden}.route{position:absolute;left:15%;top:60%;width:65%;height:6px;background:var(--blue);transform:rotate(-20deg);border-radius:10px}.pin{position:absolute;background:var(--blue);color:white;padding:8px 11px;border-radius:10px;font-size:11px}.p1{left:10%;top:65%}.p2{left:42%;top:38%}.p3{right:8%;top:20%}
+.footer{background:#0f1d2e;color:#cbd6e3;padding:55px 7%;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px}.footer-brand{color:white}.footer strong{display:block;color:white;margin-bottom:15px}.footer a{display:block;margin:9px 0;font-size:13px}.footer p{font-size:13px;line-height:1.6}.small{color:#93a5ba}.floating-ai{position:fixed;right:25px;bottom:25px;background:var(--blue);color:white;padding:14px 18px;border-radius:99px;box-shadow:0 15px 35px rgba(23,105,224,.3);z-index:30;font-weight:700;font-size:14px;cursor:pointer}.floating-ai span{margin-right:7px}.modal{display:none;position:fixed;inset:0;background:rgba(10,22,37,.45);backdrop-filter:blur(5px);z-index:50;place-items:center;padding:20px}.modal.open{display:grid}.modal-card{background:white;border-radius:25px;padding:30px;width:min(480px,100%);box-shadow:0 30px 80px rgba(0,0,0,.2);position:relative}.close{position:absolute;right:18px;top:15px;border:0;background:#f1f4f7;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer}
+@media(max-width:1100px){.public-nav{display:none}.menu-btn{display:block;margin-left:auto}.hero{grid-template-columns:1fr}.hero-visual{min-height:450px}.grid-6,.cards-3{grid-template-columns:repeat(2,1fr)}.footer{grid-template-columns:1fr 1fr}.dash-grid,.feature-split{grid-template-columns:1fr}}
+@media(max-width:700px){.topbar{padding:0 18px}.top-actions{display:none}.hero{padding:55px 22px}.hero h1{font-size:46px}.hero-visual{min-height:390px}.phone{width:290px}.section,.dashboard{padding:55px 20px}.section h2{font-size:30px}.grid-6,.cards-3,.stat-row,.vitals{grid-template-columns:1fr}.ecosystem{padding:30px 22px}.page-hero{padding:50px 22px}.page-hero h1{font-size:38px}.footer{grid-template-columns:1fr;padding:45px 25px}.floating-ai{right:15px;bottom:15px}}
+
+</style>
+<style>
+.auth-overlay{position:fixed;inset:0;background:rgba(9,24,42,.58);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.auth-overlay.show{display:flex}
+.auth-box{width:min(440px,100%);background:#fff;border-radius:28px;padding:32px;box-shadow:0 30px 90px rgba(0,0,0,.25);position:relative}
+.auth-close{position:absolute;right:18px;top:16px;width:36px;height:36px;border:0;border-radius:50%;background:#f1f5f9;font-size:22px;cursor:pointer}
+.auth-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;color:var(--blue);margin-bottom:24px}
+.auth-title{font-family:"Plus Jakarta Sans";font-size:28px;margin:0 0 8px}
+.auth-sub{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:24px}
+.auth-label{display:block;font-size:13px;font-weight:700;margin:14px 0 7px}
+.auth-input-wrap{position:relative}
+.auth-input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;outline:none}
+.auth-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,105,224,.1)}
+.auth-password-toggle{position:absolute;right:10px;top:8px;border:0;background:transparent;padding:7px;cursor:pointer;color:var(--muted)}
+.auth-row{display:flex;justify-content:space-between;align-items:center;margin:14px 0 20px;font-size:12px}
+.auth-check{display:flex;gap:7px;align-items:center;color:var(--muted)}
+.auth-link{border:0;background:none;color:var(--blue);cursor:pointer;font-weight:700}
+.auth-submit{width:100%;padding:14px;border:0;border-radius:13px;background:var(--blue);color:#fff;font:700 14px inherit;cursor:pointer}
+.auth-submit:hover{background:var(--blue-dark)}
+.auth-divider{display:flex;align-items:center;gap:10px;color:#98a5b4;font-size:11px;margin:20px 0}
+.auth-divider:before,.auth-divider:after{content:"";height:1px;background:var(--line);flex:1}
+.auth-demo{background:#f6faff;border:1px solid #dbeafe;border-radius:14px;padding:12px;font-size:12px;color:#536276;margin-top:18px}
+.auth-message{display:none;border-radius:12px;padding:10px 12px;font-size:12px;margin-bottom:12px}
+.auth-message.error{display:block;background:#fff3f4;color:#a12d39;border:1px solid #f3c7cc}
+.auth-message.success{display:block;background:#effaf5;color:#168257;border:1px solid #c7edda}
+.user-pill{display:none;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:12px;font-weight:700}
+.user-pill.show{display:flex}
+.user-avatar{width:28px;height:28px;border-radius:9px;background:var(--blue);color:#fff;display:grid;place-items:center}
+.logout-btn{border:0;background:none;color:var(--red);font:700 12px inherit;cursor:pointer}
+</style></head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">V</span><span>VITA</span></a>
+    <nav class="public-nav">
+      <a href="#home">Home</a><a href="#how">How It Works</a><a href="#ai">AI Health</a>
+      <a href="#medications">Medication</a><a href="#pharmacy">Pharmacy</a><a href="#hospital">Hospital</a>
+      <a href="#smart-box">Smart Box</a><a href="#wellness">Wellness</a><a href="#rewards">Rewards</a>
+    </nav>
+    <div class="top-actions"><button class="btn btn-ghost" onclick="showLogin()">Log In</button><button class="btn btn-primary" onclick="showLogin()">Get Started</button></div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main id="page"></main>
+
+  <footer class="footer">
+    <div><div class="brand footer-brand"><span class="brand-mark">V</span><span>VITA</span></div><p>Your Health, Our Care.</p></div>
+    <div><strong>Platform</strong><a href="#ai">AI Health</a><a href="#medications">Medication</a><a href="#hospital">Hospital</a></div>
+    <div><strong>Wellness</strong><a href="#wellness">Health Monitoring</a><a href="#rewards">Rewards</a><a href="#smart-box">Smart Box</a></div>
+    <div><strong>Safety</strong><p class="small">VITA is a prototype. Health assessments are for awareness only and do not replace professional medical advice.</p></div>
+  </footer>
+</div>
+
+<div class="floating-ai" onclick="openAiPanel()"><span>✦</span> Ask VITA</div>
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+<script>
+const page=document.getElementById("page");
+const services=[
+["✦","AI Health Assistant","Personalized guidance that understands your health context.","purple","#ai"],
+["▣","Medication","Schedules, adherence, reminders and medication safety.","sky","#medications"],
+["⌁","Pharmacy","Find pharmacies, delivery options and pharmacist consultations.","mint","#pharmacy"],
+["⌂","Hospital","Appointments, live queues and indoor navigation.","sky","#hospital"],
+["♡","Health Monitoring","Bring vitals, activity, sleep and wellness data together.","mint","#health-monitoring"],
+["◈","Wellness","Build healthy routines with practical daily insights.","purple","#wellness"]
+];
+function serviceCards(){return services.map(s=>`<a href="${s[4]}" class="card service"><div class="icon ${s[3]}">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p></a>`).join("")}
+function home(){
+return `<section class="hero"><div><div class="eyebrow">VITA Healthcare Ecosystem</div><h1>Your Health,<br><span>Connected.</span></h1><p>VITA brings AI-powered healthcare, medication management, pharmacies, hospitals, health monitoring and wellness services together in one personalized platform.</p><div class="hero-actions"><button class="btn btn-primary btn-large" onclick="showLogin()">Get Started</button><a class="btn btn-ghost btn-large" href="#how">Explore VITA</a></div></div>
+<div class="hero-visual"><div class="phone"><div class="phone-top"></div><div class="phone-body"><div class="mini-head"><div><small>Hello,</small><br><b>Good Morning, Vita</b></div><div class="avatar">V</div></div><div class="metric-grid"><div class="metric"><small>Heart Rate</small><b>72 BPM</b></div><div class="metric"><small>Medication</small><b>2/3 Taken</b></div><div class="metric"><small>Sleep</small><b>7h 42m</b></div><div class="metric"><small>Activity</small><b>6,842</b></div></div><div class="ai-float"><b>✦ VITA AI Insight</b><br>Your medication adherence improved by 8% this week.<div class="progress"><i></i></div></div></div></div></div></section>
+<section class="section"><div class="section-head"><div class="eyebrow">One ecosystem</div><h2>Everything your health journey needs.</h2><p>One place to connect the people, services and devices that support everyday healthcare.</p></div><div class="grid-6">${serviceCards()}</div></section>
+<section class="section"><div class="ecosystem"><div class="eyebrow" style="color:#80b8ff">Connected care</div><h2>One Platform. Your Complete Health Journey.</h2><div class="nodes"><div class="node you">YOU</div><div>→</div><div class="node">✦ AI</div><div class="node">▣ Medication</div><div class="node">⌁ Pharmacy</div><div class="node">⌂ Hospital</div><div class="node">♡ Wearables</div><div class="node">◈ Wellness</div><div class="node">▤ Smart Box</div></div></div></section>
+<section class="section feature-split" id="how"><div class="card chat"><div class="eyebrow">AI Health</div><h2 style="font-size:30px">Care that understands context.</h2><div class="chat-bubble user-bubble">Can I take my medication after dinner?</div><div class="chat-bubble vita-bubble"><b>VITA AI</b><br>Based on the example regimen, timing can depend on the medicine. Check the prescription instructions or ask a licensed pharmacist before changing your schedule.</div><div class="chips"><button class="chip" onclick="openAiPanel()">Ask AI</button><button class="chip" onclick="showPharmacist()">Talk to a Pharmacist</button></div></div><div class="card"><div class="eyebrow">Personal Health Profile</div><h2 style="font-size:30px">Your data, structured.</h2><div class="risk"><span>Allergies</span><b>2 records</b></div><div class="risk"><span>Active Medications</span><b>3</b></div><div class="risk"><span>Vitals</span><b>Synced</b></div><div class="risk"><span>Sleep & Activity</span><b>Connected</b></div></div></section>`;
+}
+function pageHero(title,desc){return `<section class="page-hero"><div class="eyebrow">VITA Platform</div><h1>${title}</h1><p>${desc}</p></section>`}
+function medication(){return pageHero("Medication Management","A clear daily schedule, adherence tracking and safety-first medication support.")+`<section class="dashboard"><div class="dash-grid"><div class="card"><div class="dash-head"><div><h2 style="margin:0">Today’s Schedule</h2><small>Wednesday · August 12</small></div><button class="btn btn-primary">+ Add Medication</button></div><div class="timeline">${dose("08:00 AM","Metformin","500 mg","Taken",false)}${dose("01:00 PM","Vitamin D","1 capsule","Taken",false)}${dose("08:00 PM","Metformin","500 mg","Upcoming",true)}</div></div><div class="card"><div class="eyebrow">Adherence</div><div class="ring"></div><h3 style="text-align:center">Excellent consistency</h3><p style="text-align:center;color:var(--muted);font-size:13px">Keep following the prescribed regimen.</p></div><div class="card alert"><h3>⚠ Potential interaction detected</h3><p>Example warning: Metformin and Drug B may interact. Do not change or stop medication based on this prototype alert.</p><button class="btn" onclick="showPharmacist()">Talk to a Pharmacist</button></div></div></section>`}
+function dose(t,n,d,status,up){return `<div class="dose"><span class="dot ${up?'upcoming':''}"></span><div class="dose-info"><b>${t}</b><span> · ${n}</span><small>${d}</small></div><span class="${up?'':'taken'}">${status}</span></div>`}
+function ai(){return pageHero("AI Health Assistant","A conversational health companion designed to organize information and guide you toward appropriate professional care.")+`<section class="section feature-split"><div class="card chat"><div class="chat-bubble user-bubble">What should I check before taking a new medicine?</div><div class="chat-bubble vita-bubble"><b>VITA AI</b><br>Check the prescription directions, allergies, current medicines and relevant health conditions. For interaction or dosing questions, a licensed pharmacist or clinician should confirm the advice.</div><div class="chips"><button class="chip">Check medications</button><button class="chip">Explain prescription</button><button class="chip">Find hospital</button><button class="chip">Check health risks</button></div></div><div class="card"><div class="eyebrow">Safety boundary</div><h2 style="font-size:28px">AI supports care — it does not replace it.</h2><p style="color:var(--muted);line-height:1.7">VITA AI can help organize health information and suggest useful next steps. It should not be used as a diagnosis or as a reason to start, stop or change prescribed treatment.</p><button class="btn btn-primary" onclick="showPharmacist()">Talk to a Pharmacist</button></div></section>`}
+function pharmacy(){return pageHero("Pharmacy Hub","Discover pharmacy services, availability and professional consultation pathways.")+`<section class="section"><div class="search"><input class="form-input" placeholder="Search pharmacy, service or medicine"><button class="btn btn-primary">Search</button></div><div class="cards-3">${["VITA Partner Pharmacy","Community Pharmacy","CarePlus Pharmacy"].map((x,i)=>`<div class="card"><div class="icon ${i===1?'mint':'sky'}">⌁</div><h3>${x}</h3><p style="color:var(--muted)">Open Now · Pharmacist Available · Delivery Available</p><button class="btn btn-ghost" onclick="showPharmacist()">Consult Pharmacist</button></div>`).join("")}</div></section>`}
+function hospital(){return pageHero("Hospital & Live Queue","Appointments, queue visibility and a simple indoor route in one place.")+`<section class="dashboard"><div class="dash-grid"><div class="card queue"><div class="eyebrow" style="color:#cfe2ff">Live Queue</div><div class="queue-number">A128</div><p class="muted">Currently serving A121</p><div class="queue-grid"><div class="queue-stat"><small>Patients ahead</small><strong>7</strong></div><div class="queue-stat"><small>Est. wait</small><strong>35 min</strong></div></div><p>● You're getting closer.</p></div><div class="card"><div class="eyebrow">Indoor Navigation</div><h2 style="font-size:28px">Your route</h2><div class="map"><div class="route"></div><div class="pin p1">Registration</div><div class="pin p2">Room 204</div><div class="pin p3">Pharmacy</div></div></div></div></section>`}
+function health(){return pageHero("Health Monitoring","Bring connected health metrics into one calm, readable view.")+`<section class="section"><div class="vitals">${[["♡","Heart Rate","72 BPM"],["◉","Blood Pressure","118/76"],["◌","SpO₂","98%"],["☾","Sleep","7h 42m"],["⌁","Activity","6,842 steps"],["◇","Weight","60.2 kg"]].map(x=>`<div class="vital"><small>${x[0]} ${x[1]}</small><strong>${x[2]}</strong></div>`).join("")}</div><div class="card" style="margin-top:20px"><div class="eyebrow">Risk Matrix</div>${[["Diabetes","Low","low"],["Hypertension","Moderate","moderate"],["Cardiovascular","Low","low"]].map(x=>`<div class="risk"><b>${x[0]}</b><span class="badge ${x[2]}">${x[1]}</span></div>`).join("")}<p class="small">Assessments are for awareness and do not replace medical diagnosis.</p></div></section>`}
+function smart(){return pageHero("Smart Medication Box","A connected medication experience that mirrors physical device states in the VITA app.")+`<section class="section"><div class="feature-split"><div class="card" style="display:grid;place-items:center;background:linear-gradient(145deg,#edf7ff,#fff)"><div style="width:260px;height:200px;border-radius:28px;background:#e9eef5;box-shadow:0 25px 50px rgba(20,45,75,.15);display:grid;place-items:center;font-size:75px">▦</div></div><div class="card"><div class="eyebrow">Live Device State</div><h2 style="font-size:32px">18:00 PM dose</h2><div class="risk"><span>Status</span><b style="color:var(--blue)">🔵 LOCKED</b></div><div class="risk"><span>Unlock time</span><b>18:00</b></div><p style="color:var(--muted);line-height:1.7">The prototype visualizes synchronization between the medication schedule and the connected box.</p><button class="btn btn-primary">Sync Device</button></div></div></section>`}
+function wellness(){return pageHero("Wellness & Habits","Small, consistent actions made visible — without turning health into pressure.")+`<section class="section"><div class="cards-3"><div class="card"><div class="icon mint">💧</div><h3>Water</h3><strong style="font-size:28px">6 / 8 glasses</strong><div class="progress"><i style="width:75%"></i></div></div><div class="card"><div class="icon sky">☀</div><h3>Activity</h3><strong style="font-size:28px">6,842 steps</strong><p style="color:var(--muted)">Connected wearable</p></div><div class="card"><div class="icon purple">☾</div><h3>Sleep</h3><strong style="font-size:28px">7h 42m</strong><p style="color:var(--muted)">Rest trend: stable</p></div></div></section>`}
+function rewards(){return pageHero("VITA Rewards","Turn consistent health habits into positive reinforcement.")+`<section class="section"><div class="card" style="background:linear-gradient(135deg,#edf7ff,#f1edff);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><div><div class="eyebrow">Your balance</div><h2 style="margin:8px 0">2,480 Points</h2><p style="color:var(--muted)">Keep your streak going.</p></div><button class="btn btn-primary">Browse Rewards</button></div><div class="card" style="margin-top:18px"><h3>Adherence Streak</h3><div class="chips">${["Mon ✓","Tue ✓","Wed ✓","Thu ✓","Fri ✓","Sat ⚠","Sun ✓"].map(x=>`<span class="chip">${x}</span>`).join("")}</div></div></section>`}
+function dashboard(){return `<section class="dashboard"><div class="dash-head"><div><div class="eyebrow">Personal Dashboard</div><h1>Good morning, Vita.</h1><p style="color:var(--muted)">Here’s your health overview.</p></div><button class="btn btn-primary" onclick="openAiPanel()">✦ Ask VITA</button></div><div class="stat-row"><div class="stat"><small>Heart Rate</small><strong>72 BPM</strong></div><div class="stat"><small>Medication</small><strong>2 / 3</strong></div><div class="stat"><small>Sleep</small><strong>7h 42m</strong></div><div class="stat"><small>VITA Points</small><strong>2,480</strong></div></div><div class="dash-grid" style="margin-top:20px"><div class="card"><h2 style="font-size:24px">Medication Today</h2><div class="timeline">${dose("08:00 AM","Metformin","500 mg","Taken",false)}${dose("01:00 PM","Vitamin D","1 capsule","Taken",false)}${dose("08:00 PM","Metformin","500 mg","Upcoming",true)}</div></div><div class="card queue"><div class="eyebrow" style="color:#cfe2ff">Hospital Queue</div><div class="queue-number">A128</div><p class="muted">7 patients ahead · ~35 min</p><button class="btn" style="background:white;color:var(--blue)" onclick="location.hash='hospital'">View Queue</button></div></div><div class="card" style="margin-top:20px"><h2 style="font-size:24px">Health Vitals</h2><div class="vitals">${[["Heart Rate","72 BPM"],["Blood Pressure","118/76"],["SpO₂","98%"],["Sleep","7h 42m"],["Activity","6,842"],["Weight","60.2 kg"]].map(x=>`<div class="vital"><small>${x[0]}</small><strong>${x[1]}</strong></div>`).join("")}</div></div></section>`}
+function render(){let r=location.hash.replace("#","")||"home";const map={home,ai:ai,medications:medication,pharmacy,hospital,"health-monitoring":health,"smart-box":smart,wellness,rewards};page.innerHTML=(map[r]||home)();window.scrollTo(0,0)}
+function showLogin(){document.getElementById("modal-content").innerHTML=`<div class="eyebrow">Welcome to VITA</div><h2>Sign in to your health hub</h2><label>Email</label><input class="form-input" type="email" placeholder="you@example.com"><label>Password</label><input class="form-input" type="password" placeholder="••••••••"><button class="btn btn-primary" style="width:100%" onclick="location.hash='dashboard';closeModal()">Log In</button><p class="small">Prototype login — no real credentials are collected.</p>`;document.getElementById("modal").classList.add("open")}
+function openAiPanel(){document.getElementById("modal-content").innerHTML=`<div class="eyebrow">✦ VITA AI</div><h2>How can I help?</h2><p style="color:var(--muted)">Choose a safe starting point.</p><div class="chips"><button class="chip" onclick="location.hash='medications';closeModal()">Check medications</button><button class="chip" onclick="showPharmacist()">Talk to pharmacist</button><button class="chip" onclick="location.hash='hospital';closeModal()">Find hospital</button><button class="chip" onclick="location.hash='health-monitoring';closeModal()">Check health risks</button></div>`;document.getElementById("modal").classList.add("open")}
+function showPharmacist(){document.getElementById("modal-content").innerHTML=`<div class="eyebrow">Professional Support</div><h2>Talk to a Pharmacist</h2><p style="color:var(--muted);line-height:1.6">This prototype can route users to a pharmacist consultation. In a production system, identity, consent, secure communications and licensed-provider verification would be required.</p><button class="btn btn-primary" onclick="closeModal()">Continue</button>`;document.getElementById("modal").classList.add("open")}
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+function toggleMenu(){document.querySelector(".public-nav").style.display=document.querySelector(".public-nav").style.display==="flex"?"none":"flex"}
+window.addEventListener("hashchange",render);render();
+
+</script>
+
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <button class="auth-close" onclick="closeAuth()">×</button>
+    <div class="auth-logo"><span class="brand-mark">V</span> VITA</div>
+    <h2 class="auth-title" id="authTitle">Welcome back</h2>
+    <p class="auth-sub" id="authSub">Sign in to access your personalized healthcare dashboard.</p>
+    <div id="authMessage" class="auth-message"></div>
+
+    <form id="authForm" onsubmit="handleAuth(event)">
+      <div id="nameField" style="display:none">
+        <label class="auth-label">Full name</label>
+        <input id="authName" class="auth-input" type="text" placeholder="Your name">
+      </div>
+
+      <label class="auth-label">Email</label>
+      <input id="authEmail" class="auth-input" type="email" placeholder="you@example.com" required>
+
+      <label class="auth-label">Password</label>
+      <div class="auth-input-wrap">
+        <input id="authPassword" class="auth-input" type="password" placeholder="At least 6 characters" minlength="6" required>
+        <button type="button" class="auth-password-toggle" onclick="togglePassword()">Show</button>
+      </div>
+
+      <div class="auth-row">
+        <label class="auth-check"><input type="checkbox" id="rememberMe"> Remember me</label>
+        <button type="button" class="auth-link" onclick="showForgot()">Forgot password?</button>
+      </div>
+
+      <button class="auth-submit" id="authSubmit" type="submit">Log In</button>
+    </form>
+
+    <div class="auth-divider">OR</div>
+    <div style="text-align:center;font-size:13px;color:var(--muted)">
+      <span id="switchText">Don't have an account?</span>
+      <button class="auth-link" onclick="switchAuth()" id="switchBtn">Create account</button>
+    </div>
+    <div class="auth-demo">
+      <b>Prototype mode</b><br>
+      This login is stored only in your browser for demonstration. No real medical or account data is transmitted.
+    </div>
+  </div>
+</div>
+</body>
+</html>
